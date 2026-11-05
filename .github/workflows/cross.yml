@@ -1,0 +1,35 @@
+name: cross-check
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cross-check
+  cancel-in-progress: false
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet requests
+      - name: record
+        env:
+          MINE_URL: ${{ secrets.MINE_URL }}
+          MINE_KEY: ${{ secrets.MINE_KEY }}
+          CSV_PATH: cross_log.csv
+        run: python check.py
+      - name: commit
+        run: |
+          git config user.name  "signal-cross-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add cross_log.csv
+          if git diff --cached --quiet; then echo "no new rows"; else
+            git commit -m "log $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
