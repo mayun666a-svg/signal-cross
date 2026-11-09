@@ -191,3 +191,13 @@ ts,symbol,price,my_score,my_action,alt_score,alt_signal,both_long
 2026-11-09 04:58,ADAUSDT,0.1761,-58,wait,-62,short,0
 2026-11-09 04:58,AVAXUSDT,7.999,-58,wait,-62,short,0
 2026-11-09 04:58,LINKUSDT,10.568,-58,wait,-45,short,0
+2026-11-09 13:46,BTCUSDT,74678,-60,wait,-56,short,0
+2026-11-09 13:46,ETHUSDT,2118.85,-60,wait,-59,short,0
+2026-11-09 13:46,ZECUSDT,1214.97,36,long,-24,wait,0
+2026-11-09 13:46,SOLUSDT,86.47,-43,wait,-57,short,0
+2026-11-09 13:46,BNBUSDT,684.7,-38,wait,-56,short,0
+2026-11-09 13:46,XRPUSDT,1.0938,-45,wait,-54,short,0
+2026-11-09 13:46,DOGEUSDT,0.06961,-60,wait,-45,short,0
+2026-11-09 13:46,ADAUSDT,0.1791,-58,wait,-41,short,0
+2026-11-09 13:46,AVAXUSDT,8.656,-2,wait,-44,short,0
+2026-11-09 13:46,LINKUSDT,10.573,-58,wait,-39,short,0
